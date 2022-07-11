@@ -18,7 +18,7 @@ func main() {
 	fruitList = append(fruitList, "kiwi", "pear", "mango")
 	fmt.Println("New fruit list:", fruitList)
 
-	// Now remove the 6th fruit kiwi from the slice
-	fruitList = append(fruitList[5:6])
+	// Now remove the 2nd indexed fruit orange from the list
+	fruitList = append(fruitList[:2], fruitList[3:]...)
 	fmt.Println("Sliced fruit list:", fruitList)
 }
