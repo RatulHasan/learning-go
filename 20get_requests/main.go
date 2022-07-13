@@ -38,6 +38,7 @@ func PerformGetRequest(url string) {
 	}
 
 	//fmt.Println("Body:", string(body))
+
 	var responseString strings.Builder
 	responseString.Write(body)
 	fmt.Println("Response:", responseString.String())
