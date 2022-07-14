@@ -16,9 +16,9 @@ var Collection *mongo.Collection
 // Init Create a new MongoDB connection
 func Init() {
 	// Load local env variables
-	err := godotenv.Load("./.env")
+	err := godotenv.Load("./local.env")
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Fatal("Error loading local.env file")
 	}
 	ConnectionString := os.Getenv("ConnectionString")
 	DBName := os.Getenv("DBName")
