@@ -3,19 +3,27 @@ package db_connection
 import (
 	"context"
 	"fmt"
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
+	"os"
 )
-
-const ConnectionString = "mongodb+srv://ratul:30XxuhGXECnXJxzE@learning-go.curri.mongodb.net/?retryWrites=true&w=majority"
-const DBName = "learning-Go"
-const CollectionName = "netflix"
 
 // Collection Most Important:
 var Collection *mongo.Collection
 
 // Init Create a new MongoDB connection
 func Init() {
+	// Load local env variables
+	err := godotenv.Load("./.env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+	ConnectionString := os.Getenv("ConnectionString")
+	DBName := os.Getenv("DBName")
+	CollectionName := os.Getenv("CollectionName")
+
 	// Client options
 	clientOptions := options.Client().ApplyURI(ConnectionString)
 
