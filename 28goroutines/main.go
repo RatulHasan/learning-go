@@ -12,7 +12,6 @@ var mutex sync.Mutex
 
 func main() {
 	websiteList := []string{
-		"http://localhost:2000/",
 		"https://jsonplaceholder.typicode.com/posts",
 		"https://jsonplaceholder.typicode.com/todos",
 		"https://jsonplaceholder.typicode.com/users",
